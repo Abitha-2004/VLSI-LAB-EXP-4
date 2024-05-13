@@ -182,15 +182,51 @@ output
 
 ![image](https://github.com/Abitha-2004/VLSI-LAB-EXP-4/assets/161303006/a558d65b-2f00-480f-b939-b3dde7b72183)
 T flipflop
+~~~
+module tff (t,clk, rstn,q);  
+ input t,clk, rstn;
+ output reg q;
+  always @ (posedge clk) begin  
+    if (!rstn)  
+      q <= 0;  
+    else  
+        if (t)  
+            q <= ~q;  
+        else  
+            q <= q;  
+  end  
+endmodule
+~~~
+OUTPUT
 
+![image](https://github.com/Abitha-2004/VLSI-LAB-EXP-4/assets/161303006/7dce4d97-68e0-4764-b217-4999c06a418d)
 
+![image](https://github.com/Abitha-2004/VLSI-LAB-EXP-4/assets/161303006/597f7bf3-50ac-4783-b3e3-f07daa9402ea)
+Updowncounter
+~~~
+module updown_counter(clk,rst,updown,out);
+input clk,rst,updown;
+output reg [3:0]out;
+always@(posedge clk)
+begin
+if (rst==1)
+out=4'b0000;
+else if(updown==1)
+out=out+1;
+else
+out=out-1;
+end
+endmodule
+~~~
+output
 
+![image](https://github.com/Abitha-2004/VLSI-LAB-EXP-4/assets/161303006/58b35e77-1d9f-41d6-b4dc-9f0b9fb9e6ff)
 
-
-
-
-
+![image](https://github.com/Abitha-2004/VLSI-LAB-EXP-4/assets/161303006/25556d01-72bb-4ce9-8d7e-10d3e60ee078)
 
 RESULT
+Simulate And Synthesis SR, JK, T, D - FLIPFLOP, COUNTER DESIGN is Successfully Verified using Vivado Software.
+
+
 
 
